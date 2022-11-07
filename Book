@@ -1,0 +1,22 @@
+public class Book {
+  public static double readSpeed = 0;
+
+  public String title;
+  public Author author;
+  public int countPage;
+
+  public Book(String title, Author author, int countPage) {
+    this.title = title;
+    this.author = author;
+    this.countPage = countPage;
+  }
+
+  public double speedRead() {
+    double result = countPage / readSpeed;
+    return result;
+  }
+
+  public String toString() {
+    return "Название книги: " + title + ", страниц: " + countPage + ", " + author;
+  }
+}

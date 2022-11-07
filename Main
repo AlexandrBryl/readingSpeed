@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+
+    Scanner scanner = new Scanner(System.in);
+
+    Author author = new Author("Эрнест Хемингуэй", "м", 61);
+    Author author2 = new Author("Николай Гоголь", "м", 42);
+    Author author3 = new Author("Александр Пушкин", "м", 37);
+
+    Book book = new Book("Старик и море", author, 64);
+    Book book2 = new Book("Мёртвые души", author2, 352);
+    Book book3 = new Book("Пиковая дама", author3, 80);
+
+    System.out.println(
+        "Добро пожаловать в книжное приложение!\n" + "Прежде всего мы хотим узнать, с какой скоростью вы читаете.\n"
+            + "Введите, сколько страниц вы можете прочитать за минуту:");
+    Book.readSpeed = scanner.nextInt();
+
+    System.out.println("В нашем приложении сейчас есть такиой выбор:\n" + "1. " + book + "\n" + "2. " + book2 + "\n"
+        + "3. " + book3 + "\n"
+        + "Пожалуйста, введите порядковый номер книги, которую вы хотите прочесть, а мы скажем, за сколько минут вы сможете её прочитать!");
+    int result = scanner.nextInt();
+    if (result == 1) {
+      System.out.println("Хороший выбор, эту книгу вы прочтёте примерно за " + book.speedRead() + " минут");
+    } else if (result == 2) {
+      System.out.println("Хороший выбор, эту книгу вы прочтёте примерно за " + book2.speedRead() + " минут");
+    } else if (result == 3) {
+      System.out.println("Хороший выбор, эту книгу вы прочтёте примерно за " + book3.speedRead() + " минут");
+    } else {
+      System.out.println("Книги под таким номером нет.");
+    }
+    System.out.println("Всего доброго!");
+  }
+}
